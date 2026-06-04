@@ -2,6 +2,7 @@
   "name": "spec-collector",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev:api": "pnpm -F api dev",
     "dev:web": "pnpm -F web dev",
