@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Added GitHub link to header:
+  - Added a GitHub icon button in the `SpecsPage` header that links to the repository.
+  - Styled with hover states that respect dark/light mode for a consistent user experience.
 - Implemented PIN change functionality:
   - Added `PUT /api/auth/change-pin` backend route to securely validate the old PIN and update to the new PIN.
   - Added `ChangePinPage` to provide a user interface for changing the PIN.

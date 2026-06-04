@@ -176,6 +176,17 @@ export default function SpecsPage() {
       <header className="border-b border-[var(--border)] px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <h1 className="text-xl font-bold">Spec Collector</h1>
+          <a
+            href="https://github.com/ErunamoJAZZ/spec-collector"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+            title="View on GitHub"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.38 3.38 0 0 0-.94-2.61c3.14-.35 6.44-1.53 6.44-7A5.44 5.44 0 0 0 20 4.77A5.07 5.07 0 0 0 19.91 1s-.8.45-2.82 1.28A9.43 9.43 0 0 0 12 2c-1.78 0-3.45.43-4.08.78A5.07 5.07 0 0 0 5 4.77 5.44 5.44 0 0 0 3.77 8c0 5.42 3.3 6.6 6.44 7A3.38 3.38 0 0 0 9 18.13V22" />
+            </svg>
+          </a>
           <div className="text-sm text-gray-500">{user?.email}</div>
         </div>
         
