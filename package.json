@@ -7,6 +7,7 @@
     "dev:web": "pnpm -F web dev",
     "dev": "pnpm -r --parallel dev",
     "build": "pnpm -r build",
+    "vercel-build": "pnpm install && pnpm build",
     "start": "pnpm -F api start",
     "lint": "oxlint apps/api apps/web"
   },

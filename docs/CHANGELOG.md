@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Configured project for Vercel deployment:
+  - Added `vercel.json` to route `/api/*` requests to Vercel Serverless Functions and other requests to the Vite frontend.
+  - Created an `api/index.js` entrypoint for Serverless Functions.
+  - Updated `apps/api/src/app.ts` to remove the static frontend serving (now handled by Vercel) and adjusted health check to `/api/health`.
+  - Added a `vercel-build` script to the root `package.json`.
+  - Changed the frontend API base URL in `apps/web/src/lib/api.ts` to `/api` to correctly use Vercel routing instead of hardcoding `localhost`.
 - Created `.env.example` to provide a template for environment variables and ensured it is tracked by Git.
 - Rewrote `README.md` to include detailed architecture, tech stack, and setup instructions.
 - Rewrote `AGENTS.md` to specify detailed guidelines regarding the monorepo architecture, pnpm security choices, and frontend/backend conventions for AI agents.
