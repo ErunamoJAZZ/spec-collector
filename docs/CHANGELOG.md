@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Implemented PIN change functionality:
+  - Added `PUT /api/auth/change-pin` backend route to securely validate the old PIN and update to the new PIN.
+  - Added `ChangePinPage` to provide a user interface for changing the PIN.
+  - Added an options dropdown menu in the `SpecsPage` header to easily access the Change PIN and Logout actions.
+- Added unsaved changes protection:
+  - Created a reusable `Modal` component.
+  - Implemented logic in `SpecsPage` to warn users with a custom modal if they try to logout or change their PIN without saving.
+  - Added a `beforeunload` event listener to warn users if they try to close the tab or leave the page with unsaved changes, preventing accidental data loss.
 - Configured project for Vercel deployment:
   - Added `vercel.json` to route `/api/*` requests to Vercel Serverless Functions and other requests to the Vite frontend.
   - Created an `api/index.js` entrypoint for Serverless Functions.

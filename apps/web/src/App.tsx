@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 import LoginPage from './pages/LoginPage';
 import SpecsPage from './pages/SpecsPage';
+import ChangePinPage from './pages/ChangePinPage';
 import { ThemeProvider } from './context/ThemeContext';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from './context/ThemeContext';
@@ -19,7 +20,8 @@ function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800"
+      className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+      title="Toggle theme"
     >
       {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
     </button>
@@ -29,8 +31,8 @@ function ThemeToggle() {
 export default function App() {
   return (
     <ThemeProvider defaultTheme="dark">
-      <div className="min-h-screen transition-colors duration-200 bg-white dark:bg-[#09090b] text-black dark:text-white">
-        <div className="absolute top-4 right-4">
+      <div className="min-h-screen transition-colors duration-200 bg-[var(--background)] text-[var(--foreground)]">
+        <div className="absolute top-4 right-4 z-50">
           <ThemeToggle />
         </div>
         <Routes>
@@ -41,6 +43,14 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <SpecsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/app/change-pin"
+            element={
+              <ProtectedRoute>
+                <ChangePinPage />
               </ProtectedRoute>
             }
           />
