@@ -1,0 +1,16 @@
+{
+  "name": "spec-collector",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:api": "pnpm -F api dev",
+    "dev:web": "pnpm -F web dev",
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "start": "pnpm -F api start",
+    "lint": "oxlint apps/api apps/web"
+  },
+  "devDependencies": {
+    "oxlint": "^0.11.0"
+  }
+}
