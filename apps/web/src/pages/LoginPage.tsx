@@ -56,7 +56,7 @@ export default function LoginPage() {
           <p className="mt-2 text-sm text-gray-500">Sign in to your account</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+        <form onSubmit={handleSubmit} className="mt-8 space-y-6" noValidate>
           {error && (
             <div className="rounded border border-red-500 bg-red-50/10 p-3 text-sm text-red-500">
               {error}
