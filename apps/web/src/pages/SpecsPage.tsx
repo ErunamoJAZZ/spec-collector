@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { LogOut, Save, Clock } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
+import { Clock, LogOut, Save } from 'lucide-react';
 import MDEditor from '@uiw/react-md-editor';
 import { useHotkeys } from 'react-hotkeys-hook';
 import api from '../lib/api';
@@ -15,6 +16,7 @@ function parseJwt(token: string) {
 
 export default function SpecsPage() {
   const { user, token, logout } = useAuth();
+  const { theme } = useTheme();
   
   const [projectName, setProjectName] = useState('');
   const [specContent, setSpecContent] = useState('');
@@ -169,7 +171,7 @@ export default function SpecsPage() {
           </button>
         </div>
         
-        <div data-color-mode="auto">
+        <div data-color-mode={theme}>
           <label className="block text-sm font-medium mb-1">Specification</label>
           <MDEditor
             value={specContent}
@@ -179,7 +181,7 @@ export default function SpecsPage() {
           />
         </div>
         
-        <div data-color-mode="auto">
+        <div data-color-mode={theme}>
           <label className="block text-sm font-medium mb-1">Execution Plan</label>
           <MDEditor
             value={executionPlan}
