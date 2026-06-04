@@ -3,9 +3,19 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Integrated theme toggle into header:
+  - Moved `ThemeToggle` from App.tsx into the `SpecsPage` header to prevent overlap with the options menu on mobile.
+  - Added theme toggle to `LoginPage` so users can switch themes before logging in.
+  - Added responsive sizing for the theme toggle button.
+- Restored session timer in SpecsPage header (visible on sm+ screens).
 - Added GitHub link to header:
   - Added a GitHub icon button in the `SpecsPage` header that links to the repository.
   - Styled with hover states that respect dark/light mode for a consistent user experience.
+- Made UI responsive for mobile devices:
+  - Reduced header padding and font sizes on small screens.
+  - Adjusted spacing and layout for better mobile experience.
+  - Adjusted MDEditor heights for smaller screens.
+  - Made modal buttons stack vertically on mobile.
 - Implemented PIN change functionality:
   - Added `PUT /api/auth/change-pin` backend route to securely validate the old PIN and update to the new PIN.
   - Added `ChangePinPage` to provide a user interface for changing the PIN.

@@ -31,7 +31,7 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
       <div 
-        className="bg-white dark:bg-[#18181b] rounded-lg shadow-xl w-full max-w-md border border-[var(--border)] overflow-hidden"
+        className="bg-white dark:bg-[#18181b] rounded-lg shadow-xl w-full max-w-sm sm:max-w-md border border-[var(--border)] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--border)]">

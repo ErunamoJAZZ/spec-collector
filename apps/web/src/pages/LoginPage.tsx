@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { z } from 'zod';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
+import { Moon, Sun } from 'lucide-react';
 import api from '../lib/api';
 
 const loginSchema = z.object({
@@ -14,6 +16,7 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
+  const { theme, setTheme } = useTheme();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +40,16 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
+    <div className="flex min-h-screen items-center justify-center p-4 relative">
+      <div className="absolute top-4 right-4">
+        <button
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+          title="Toggle theme"
+        >
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+      </div>
       <div className="w-full max-w-md space-y-8 rounded-xl border border-[var(--border)] bg-[var(--background)] p-8 shadow-lg">
         <div className="text-center">
           <h2 className="text-2xl font-bold">Welcome</h2>
